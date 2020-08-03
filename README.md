@@ -7,7 +7,7 @@ SDK를 사용하면 편리하고 안전하게 API 연결을 할 수 있습니다
 
 `setting.php` 파일은 기본 설정 파일입니다.
 
-* 공유 스토리지 서비스의 도메인 `setting.php`의 `apiDomain`의 값으로 설정합니다.
+* 컨텐츠 인증 다운로드 서비스의 도메인 `setting.php`의 `apiDomain`의 값으로 설정합니다.
 * API 버전을 `setting.php`의 `version`의 값으로 설정합니다.
 
 * 아래 그림과 같이 **콘솔**에서 `설정관리` -> `AccessKey 관리` 에서 accesskey를 생성하며
