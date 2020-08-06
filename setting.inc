@@ -18,25 +18,25 @@ $_API = array
 	 * API서버 도메인
 	 * 'https://' 부터 시작합니다.
 	 */
-	'apiDomain' => 'https://계정아이디.cad.iwinv.net/api' ,
+	'apiDomain' => 'https://계정아이디.cad.iwinv.net/api',
 
 	/**
 	 * accesskeyId
 	 * accesskey ID
 	 */
-	'accesskeyId' => '' ,
+	'accesskeyId' => '',
 
 	/**
 	 * accesskeySecret
 	 * accesskey 비번
 	 */
-	'accesskeySecret' => '' ,
+	'accesskeySecret' => '',
 
 	/**
 	 * folderKey
 	 * 스토리지키 또는 폴더키
 	 */
-	'folderKey' => '' ,
+	'folderKey' => '',
 
 	/**
 	 * version

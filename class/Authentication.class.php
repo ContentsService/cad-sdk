@@ -39,7 +39,11 @@ class Authentication
 	 */
 	public static $foldersUrl ;
 	/**
-	 * @var string 블랙리스트 설정 주소
+	 * @var string 스토리지 검색 주소
+	 */
+	public static $storagesUrl ;
+	/**
+	 * @var string 스토리지 세팅 검색 주소
 	 */
 	public static $blackUrl ;
 	/**
@@ -314,7 +318,7 @@ class Authentication
 	 * @param string $functionName 호출function 이름
 	 * @param string $param1 파라미터
 	 * @param string $param2 파라미터
-	 * @return array 디코드 된 결과정보
+	 * @return array 티코드 된 결과정보
 	 */
 	public function returnMsg ( $response , $functionName , $param1 = '' , $param2 = '' )
 	{
@@ -362,7 +366,7 @@ class Authentication
 	/**
 	 * 블랙리스트 조회
 	 * @param string $token 인증토큰
-	 * @return array 블랙리스트 ( RequestID : 요청번호 ; black : 블랙리스트  ; Result : 결과 메시지 )
+	 * @return array 스토리지  ( RequestID : 요청번호 ; Storages : 스토리지  ; Result : 결과 메시지 )
 	 */
 	public function blackSelect ( $token = '' )
 	{
@@ -372,7 +376,7 @@ class Authentication
 
 		$headers[] = 'Authorization:' . $_token ;
 		$re = self::curl ( self::$blackUrl , $headers , 'GET' ) ;
-		return $this -> returnMsg ( $re , __FUNCTION__ ) ;
+		return $this -> returnMsg ( $re , __FUNCTION__ ) ; // $re -> storages
 	}
 
 
@@ -381,7 +385,7 @@ class Authentication
 	 * @param string $token 인증토큰
 	 * @param string $branch 종류
 	 * @param string $black 블랙리스트
-	 * @return array 블랙리스트 ( RequestID : 요청번호 ; Result : 결과 메시지 )
+	 * @return array 스토리지  ( RequestID : 요청번호 ; Storages : 스토리지 ; Result : 결과 메시지 )
 	 */
 	public function blackCreate ( $token = '' , $branch , $black )
 	{
@@ -398,8 +402,8 @@ class Authentication
 	/**
 	 * 블랙리스트 삭제
 	 * @param string $token 인증토큰
-	 * @param string $data 데이터
-	 * @return array 블랙리스트 ( RequestID : 요청번호 ; Result : 결과 메시지 )
+	 * @param array $data 삭제할 블랙리스트
+	 * @return array 스토리지  ( RequestID : 요청번호 ; Storages : 스토리지 ; Result : 결과 메시지 )
 	 */
 	public function blackDelete ( $token = '' , $data )
 	{
